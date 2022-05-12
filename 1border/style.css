@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+.loader{height: 100vh;} /*뷰포터의 높이가 100%라는 말*/
+.loader_blob{
+    position: relative;
+    width: 564px; height: 672px;
+    left: 50%;
+    top: 50%;
+    /* translate의 백분율은 기준이 자신이다. */
+    transform: translate(-50%,-50%);
+    animation: gorobert 6s infinite alternate;
+    overflow: hidden; /*넘치면 숨겨버려라*/
+}
+
+.loader_blob img{width: 100%;}
+/* 부모태그에 이미지를 꽉채워서 넣겠다 */
+
+/* 선애니 */
+.ro{position: absolute;
+    width: 564px; height: 672px;
+    left: calc(50% - 282px);
+    /*calc --> 계산기란뜻 [transform:translate(-50%, -50%)]로 정중앙에 오게하는 코드의 다른 대체 코드. 내 넓이에서 반을 빼준다는 의미) 이미지의 넓이가 564px이기때문에 반을 빼줘서 282px*/
+    top: calc(50% - 336px);
+    /* translate의 백분율은 기준이 자신이다. */ 
+    animation: rotate 6s infinite alternate;
+
+}
+.ro .loader_blob2{
+    width: 564px; height: 672px;
+    border: 1px solid #999;
+    animation: gorobert 6s infinite alternate;
+    /*alternate --> 한번 실행되고 또 거꾸로 한번더 실행되겠다*/
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes gorobert{
+    0%{border-radius: 48% 52% 57% 43% / 43% 46% 54% 57% ;}
+    50%{border-radius: 52% 48% 62% 38% / 41% 51% 49% 59% ;}
+    100%{border-radius: 65% 35% 68% 32% / 32% 55% 45% 68% ;}
+
+}
+
+@keyframes rotate{
+    0%{
+        /*0초*/
+        /*deg --> degree 각도*/
+        transform: rotate(0deg)
+    }
+    100%{
+        /*6초가 끝나는 지점*/
+        transform: rotate(360deg)
+    }
+}
