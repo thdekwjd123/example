@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>parallax</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <!-- https://matthew.wagerfield.com/parallax/ -->
+    <div class="container">
+        <div id="scene">
+            <!--숫자가 클수록 움직임이 많아짐, 음수면 마우스따라 움직임-->
+            <div data-depth="0.1" class="background"><img src="img/background.png" alt=""></div>
+            <div data-depth="0.2" class="background2"><img src="img/background2.png" alt=""></div>
+            <div data-depth="-0.2" class="background1"><img src="img/background1.png" alt=""></div>
+            <div data-depth="0.3"><img src="img/longcircle1.png" alt=""></div>
+            <div data-depth="-0.3"><img src="img/minicircle1.png" alt=""></div>
+            <div data-depth="0.4"><img src="img/minicircle2.png" alt=""></div>
+            <div data-depth="-0.4"><img src="img/minicircle3.png" alt=""></div>
+            <div data-depth="0.5"><img src="img/nemo.png" alt=""></div>
+            <div data-depth="-0.5"><img src="img/name.png" alt=""></div>
+            <div data-depth="0.6"><img src="img/circle1.png" alt=""></div>
+            <div data-depth="-0.6"><img src="img/circle2.png" alt=""></div>
+            <div data-depth="0.1"><img src="img/name2.png" alt=""></div>
+            <div data-depth="-0.1"><img src="img/name3.png" alt=""></div>
+            <div data-depth="0.25" class="name4"><img src="img/name4.png" alt=""></div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script>
+        var scene = document.getElementById('scene');
+        var parallaxInstance = new Parallax(scene);
+    </script>
+</body>
+</html>

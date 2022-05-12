@@ -1,0 +1,12 @@
+@charset "UTF-8";
+body{padding: 0; margin: 0; background: #0c0b4c;}
+
+
+.container{width: 1000px; height: 1000px;
+margin: 100px auto; background: url(img/background.png) no-repeat ;
+overflow: hidden;
+}
+
+.container .background1 img{width: 130%;}
+.container .background2 img{width: 140%;}
+.container .background1 img{width: 140%;}

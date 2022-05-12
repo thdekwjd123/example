@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap');
+
+body{font-family: 'Poppins', sans-serif;/*이 폰트를 쓰지 못하면 글자의 삐침을 없애라*/
+    background-color: #222;
+}
+*{margin: 0; padding: 0;}
+
+
+section{width: 100%; height: 100vh;} /*100vh -> 화면의 높이와 동일*/
+section .scroll{position: absolute; left: 95px; top: 0;
+    display: flex;/*display:flex는 float:left처럼 화면넓이가 줄어들어도 밑으로 떨어지지 않는다.(이 예제에서는 글자길이가 좁아져서 글자만 밑으로 떨어짐)*/
+
+    /*width:4739px*/
+    /*텍스트 한줄의 넓이를 *2한 값*/
+    /*텍스트가 밑에 떨어지지 않고 한줄로 나와야해서*/
+    transform: rotate(90deg);
+    transform-origin: left top;
+}
+section .scroll div{
+    /*float:left*/
+    background-color: #fff; 
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 64px;
+    white-space: nowrap;
+    animation: animate1 40s linear infinite;
+
+
+}
+section .scroll div:nth-child(2){
+    animation: animate2 40s linear infinite;
+    animation-delay: -20s; /*기다렸다가 애니메이션 실행되라(양수일때)
+    *20초 앞질러서 애니메이션 실행되라(음수일때)
+    */
+
+}
+
+
+section .scroll div span{}
+
+@keyframes animate1{
+    0%{transform: translateX(100%);}/*자기 몸만큼 오른쪽으로 이동*/
+    100%{transform: translateX(-100%);}/*자기 몸만큼 왼쪽으로 이동*/
+}
+/*첫째가 자기자리가 아닌 왼쪽(보이지 않는 화면의)에서 튀어나오기 때문에*/
+
+
+@keyframes animate2{
+    0%{transform: translateX(0);}
+    100%{transform: translateX(-200%);}
+}
